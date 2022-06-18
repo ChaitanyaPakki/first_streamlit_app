@@ -16,8 +16,8 @@ my_fruit_list = pandas.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.co
 # setting Fruit name as index
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
-# Multiselect option on fruits
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+# Multiselect option on fruits and pre populating list to set an example
+streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index)). ['Avacado', 'Strawberries']
 
 # display the file content on the streamlit app as a table
 streamlit.dataframe(my_fruit_list)
