@@ -1,5 +1,7 @@
 import streamlit
 import pandas
+import requests
+
 streamlit.title("My Mom's new Healthy Diner")
 
 streamlit.header('Breakfast Favourites')
@@ -24,3 +26,5 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # display the file content on the streamlit app as a table
 streamlit.dataframe(fruits_to_show)
 
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text("fruityvice_response")
